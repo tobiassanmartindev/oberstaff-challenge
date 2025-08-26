@@ -16,7 +16,7 @@ export const useMainStore = defineStore('main', {
     sortOption: null,
     cachedUsers: 0,
 
-    errorMessage:false
+    errorMessage: false,
   }),
 
   actions: {
@@ -35,9 +35,9 @@ export const useMainStore = defineStore('main', {
     // =====================
     // User Management
     // =====================
-    async fetchUsers() {      
-      this.loadingUsers = true;
-      this.errorMessage = false;
+    async fetchUsers() {
+      this.loadingUsers = true
+      this.errorMessage = false
       try {
         const response = await fetch('https://randomuser.me/api/?results=3')
 
@@ -56,7 +56,6 @@ export const useMainStore = defineStore('main', {
         this.errorMessage = true
         return []
       }
-
     },
 
     createUser(user) {
@@ -69,7 +68,7 @@ export const useMainStore = defineStore('main', {
       this.searchFilter = filter
       const normalizedFilter = filter.toLowerCase()
 
-      this.filteredUsers = this.users.filter(user => {
+      this.filteredUsers = this.users.filter((user) => {
         const name = `${user.name.first} ${user.name.last}`.toLowerCase()
         const country = user.location.country.toLowerCase()
         return name.includes(normalizedFilter) || country.includes(normalizedFilter)

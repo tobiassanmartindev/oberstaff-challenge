@@ -4,7 +4,7 @@ import PrimeVue from 'primevue/config'
 import Aura from '@primeuix/themes/aura'
 import './index.css'
 import ToastService from 'primevue/toastservice'
-import AnimateOnScroll from 'primevue/animateonscroll';
+import AnimateOnScroll from 'primevue/animateonscroll'
 
 import App from './App.vue'
 import router from './router'
@@ -19,6 +19,6 @@ app.use(PrimeVue, {
   },
 })
 app.use(ToastService)
-app.directive('animateonscroll', AnimateOnScroll);
+app.directive('animateonscroll', AnimateOnScroll)
 
 app.mount('#app')

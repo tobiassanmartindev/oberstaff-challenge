@@ -1,23 +1,13 @@
 <template>
-  <div class="grid grid-cols-4 gap-7 mt-6">
-    <div 
-      v-for="user in mainStore.filteredUsers" 
-      :key="user.login.uuid"
-      class="fade-in-wrapper"
-    >
-      <UserCard 
-        @click="mainStore.toggleViewUserDialog(user)" 
-        :user="user" 
-        class="card-user"
-      />
+  <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 gap-7 mt-6">
+    <div v-for="user in mainStore.filteredUsers" :key="user.login.uuid" class="fade-in-wrapper">
+      <UserCard @click="mainStore.toggleViewUserDialog(user)" :user="user" class="card-user" />
     </div>
   </div>
   <EmptyState />
   <ErrorMessage />
   <LoadMoreButton />
 </template>
-
-
 
 <script setup>
 import Card from 'primevue/card'
@@ -38,7 +28,6 @@ onMounted(() => {
   }
 })
 </script>
-
 
 <style scoped>
 .fade-in-wrapper {
@@ -71,4 +60,3 @@ onMounted(() => {
   }
 }
 </style>
-

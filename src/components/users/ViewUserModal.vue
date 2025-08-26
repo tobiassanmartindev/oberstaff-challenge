@@ -3,12 +3,12 @@
     v-model:visible="mainStore.dialogViewUser"
     modal
     header="Detalles del Usuario"
-    :style="{ width: '55rem'}"
+    class="w-full md:w-3/4 lg:w-2/3 xl:w-1/2 2xl:w-2/5"
   >
     <div class="flex flex-col gap-6 p-2">
       <!-- Perfil -->
       <div class="grid grid-cols-12">
-        <div class="col-span-10">
+        <div class="col-span-12 lg:col-span-10 xl:col-span-10">
           <div class="flex items-center gap-4 mb-2">
             <Avatar :image="mainStore.userSelected.picture.large" shape="circle" size="xlarge" />
             <div>
@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <div class="col-span-2">
+        <div class="col-span-12 lg:col-span-2 xl:col-span-2">
           <Button
             :label="mainStore.userCopied ? 'Copiado!' : 'Copiar'"
             :icon="mainStore.userCopied ? 'pi pi-check' : 'pi pi-copy'"
@@ -39,7 +39,7 @@
           <i class="pi pi-envelope text-lg text-primary"></i>
           <span class="font-semibold text-lg">Información de Contacto</span>
         </div>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1 xl:grid-cols-1 xl:grid-cols-2">
           <div class="bg-surface-50 p-3 rounded flex items-center gap-2">
             <i class="pi pi-envelope text-primary"></i>
             <span>{{ mainStore.userSelected.email }}</span>
@@ -66,7 +66,7 @@
           <span class="font-semibold text-lg">Detalles de Ubicación</span>
         </div>
         <div class="grid grid-cols-2">
-          <div class="bg-surface-50 p-3 rounded flex items-center gap-2 col-span-2">
+          <div class="bg-surface-50 p-3 rounded flex items-center gap-2 grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
             <i class="pi pi-home text-primary"></i>
             <span>
               {{ mainStore.userSelected.location.street.number }}
@@ -111,7 +111,7 @@
           <i class="pi pi-info-circle text-lg text-primary"></i>
           <span class="font-semibold text-lg">Otros Detalles</span>
         </div>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2">
           <div class="bg-surface-50 p-3 rounded flex items-center gap-2">
             <i class="pi pi-calendar text-primary"></i>
             <span>Nacimiento: {{ formatDate(mainStore.userSelected.dob.date) }}</span>
@@ -155,6 +155,4 @@ function formatDate(dateStr) {
 }
 </script>
 
-<style scoped>
-/* Puedes agregar estilos personalizados aquí si lo necesitas */
-</style>
+<style scoped></style>

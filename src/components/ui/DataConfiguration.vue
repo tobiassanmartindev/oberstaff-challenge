@@ -2,15 +2,15 @@
   <Card class="card mb-5">
     <template #content>
       <div class="grid grid-cols-12">
-        <div class="col-span-6 flex items-center">
+        <div class="col-span-12 md:col-span-6 xl:col-span-6 flex items-center">
           <div class="flex gap-2">
             <span>Cargar Manualmente</span>
             <ToggleSwitch v-model="mainStore.infiniteScroll" />
             <span>Scroll Infinito</span>
           </div>
         </div>
-        <div class="col-span-6 items-center flex justify-end text-gray-600">
-          <span>{{mainStore.cachedUsers}} Usuarios guardados</span>
+        <div class="col-span-12 md:col-span-6 xl:col-span-6 items-center flex justify-end text-gray-600">
+          <span>{{ mainStore.cachedUsers }} Usuarios guardados</span>
           <div class="flex justify-center ml-3">
             <Button
               type="button"

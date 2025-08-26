@@ -7,7 +7,7 @@
       v-model="mainStore.searchFilter"
       placeholder="Buscar por nombre o país"
     />
-  </div>  
+  </div>
 </template>
 
 <script setup>
@@ -17,5 +17,4 @@ import InputText from 'primevue/inputtext'
 import { useMainStore } from '@/stores/mainStore.js'
 const mainStore = useMainStore()
 const value = ref(null)
-
 </script>

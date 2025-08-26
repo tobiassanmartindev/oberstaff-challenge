@@ -1,17 +1,17 @@
 <template>
-  <div class="user-finder-page w-[1500px] mx-auto p-8">
+  <div class="user-finder-page py-8 px-5 xl:px-60 2xl:px-80">
     <header>
       <Header />
     </header>
     <DataConfiguration />
     <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-4">
+      <div class="xl:col-span-4 col-span-12 ">
         <SearchBar />
       </div>
-      <div class="col-span-4">
+      <div class="xl:col-span-4 col-span-12 ">
         <SortControls />
       </div>
-      <div class="col-span-4 flex justify-end">
+      <div class="xl:col-span-4 col-span-12  flex justify-end">
         <Button
           label="Generar nuevo perfil"
           @click="mainStore.toggleNewUserDialog"
@@ -47,7 +47,7 @@ const mainStore = useMainStore()
 let isLoading = false
 
 onMounted(() => {
-  mainStore.getCachData();
+  mainStore.getCachData()
   window.addEventListener('scroll', () => {
     if (!mainStore.infiniteScroll) return
     const scrollPosition = window.scrollY + window.innerHeight
