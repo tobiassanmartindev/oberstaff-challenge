@@ -8,7 +8,7 @@ const router = createRouter({
       component: () => import('../layouts/MainLayout.vue'),
       children: [
         {
-          path: '/users',
+          path: '/',
           name: 'User Finder',
           component: () => import('../pages/UserFinder.vue'),
         },

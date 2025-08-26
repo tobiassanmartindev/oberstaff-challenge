@@ -12,7 +12,11 @@
         <SortControls />
       </div>
       <div class="col-span-4 flex justify-end">
-        <Button label="Generar nuevo perfil" icon="pi pi-plus" />
+        <Button
+          label="Generar nuevo perfil"
+          @click="mainStore.toggleNewUserDialog"
+          icon="pi pi-plus"
+        />
       </div>
     </div>
     <UserList class="mt-5 mb-50" />
@@ -20,6 +24,8 @@
       <Footer />
     </footer>
   </div>
+  <NewUserModal />
+  <ViewUserModal />
 </template>
 
 <script setup>
@@ -30,7 +36,30 @@ import DataConfiguration from '@/components/ui/DataConfiguration.vue'
 import Button from 'primevue/button'
 import UserList from '@/components/users/UserList.vue'
 import Footer from '@/components/layout/Footer.vue'
+import UserModal from '@/components/users/NewUserModal.vue'
+import { useMainStore } from '@/stores/mainStore.js'
+import { mount } from '@vue/test-utils'
+import { onMounted } from 'vue'
+import NewUserModal from '@/components/users/NewUserModal.vue'
+import ViewUserModal from '@/components/users/ViewUserModal.vue'
+const mainStore = useMainStore()
+
+let isLoading = false
+
+onMounted(() => {
+  mainStore.getCachData();
+  window.addEventListener('scroll', () => {
+    if (!mainStore.infiniteScroll) return
+    const scrollPosition = window.scrollY + window.innerHeight
+    const bottomPosition = document.documentElement.scrollHeight
+    if (scrollPosition >= bottomPosition - 500 && !isLoading) {
+      isLoading = true
+      mainStore.fetchUsers().finally(() => {
+        isLoading = false
+      })
+    }
+  })
+})
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
