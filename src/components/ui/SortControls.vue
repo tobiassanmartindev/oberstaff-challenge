@@ -25,3 +25,10 @@ const filterOptions = ref([
   { name: 'País (Z-A)', code: 'country-desc' },
 ])
 </script>
+
+<style scoped>
+.sort-control {
+  background-color: #fff;
+  color: #4b5563;
+}
+</style>

@@ -4,3 +4,7 @@
 body {
     background: #ffffff;
 }
+
+div#overlay_menu {
+    background: #fff;
+}

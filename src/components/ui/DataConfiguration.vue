@@ -2,11 +2,11 @@
   <Card class="card mb-5">
     <template #content>
       <div class="grid grid-cols-12">
-        <div class="col-span-12 md:col-span-6 xl:col-span-6 flex items-center">
+        <div class="col-span-12 md:col-span-6 xl:col-span-6 flex items-center text-gray-600">
           <div class="flex gap-2">
-            <span class="text-grey-900">Cargar Manualmente</span>
+            <span>Cargar Manualmente</span>
             <ToggleSwitch v-model="mainStore.infiniteScroll" />
-            <span class="text-grey-900">Scroll Infinito</span>
+            <span>Scroll Infinito</span>
           </div>
         </div>
         <div class="col-span-12 md:col-span-6 xl:col-span-6 items-center flex justify-end text-gray-600">
@@ -19,7 +19,7 @@
               @click="toggle"
               aria-haspopup="true"
               aria-controls="overlay_menu"
-              severity="green-500"
+              severity="success"
             />
             <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
               <template #item="{ item, props }">
@@ -82,5 +82,8 @@ const toggle = (event) => {
   background-color: #f5f7fb;
   box-shadow: none;
   border: 1px solid #e4e4e4;
+}
+.span-text {
+  color: #334155;
 }
 </style>

@@ -6,7 +6,7 @@
       </div>
     </template>
     <template #title>
-      <h2 class="text-center text-xl font-medium mb-2">
+      <h2 class="text-center text-xl font-medium mb-2 text-gray-700">
         {{ user.name.title }} {{ user.name.first }} {{ user.name.last }}
       </h2>
     </template>
@@ -18,7 +18,7 @@
     <template #content>
       <div class="grid grid-rows-3 gap-3">
         <div class="grid grid-cols-12">
-          <div class="col-span-1">
+          <div class="col-span-1text-gray-500 ">
             <i class="pi pi-map-marker"></i>
           </div>
           <div class="col-span-11 text-[13px] text-gray-500 truncate" style="max-width: 260px">
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="grid grid-cols-12">
-          <div class="col-span-1 flex">
+          <div class="col-span-1 text-gray-500 flex">
             <i class="pi pi-envelope"></i>
           </div>
           <div class="col-span-11 flex text-[13px] text-gray-500">
@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="grid grid-cols-12">
-          <div class="col-span-1 flex">
+          <div class="col-span-1 text-gray-500 flex">
             <i class="pi pi-phone"></i>
           </div>
           <div class="col-span-11 flex text-[13px] text-gray-500">{{ user.phone }}</div>

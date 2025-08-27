@@ -16,6 +16,7 @@
           label="Generar nuevo perfil"
           @click="mainStore.toggleNewUserDialog"
           icon="pi pi-plus"
+          severity="success"
         />
       </div>
     </div>
