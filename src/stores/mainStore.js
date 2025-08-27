@@ -65,6 +65,8 @@ export const useMainStore = defineStore('main', {
     },
 
     deleteUser(user) {
+    
+
       this.users = this.users.filter((u) => u.login.uuid !== user.login.uuid)
       this.filteredUsers = this.filteredUsers.filter((u) => u.login.uuid !== user.login.uuid)
       this.userSelected = null

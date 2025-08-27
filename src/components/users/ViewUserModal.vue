@@ -10,7 +10,7 @@
       <div class="grid grid-cols-12">
         <div class="col-span-12 lg:col-span-10 xl:col-span-10">
           <div class="flex items-center gap-4 mb-2">
-            <Avatar :image="mainStore.userSelected?.picture.large" shape="circle" size="xlarge" />
+            <Avatar :image="mainStore.userSelected.picture.large" shape="circle" size="xlarge" />
             <div>
               <div class="text-xl font-semibold col-span-6">
                 {{ mainStore.userSelected.name.first }} {{ mainStore.userSelected.name.last }}
@@ -138,7 +138,7 @@
         </div>
       </div>
       <div class="text-right">
-        <Button label="Eliminar usuario" icon="pi pi-trash" @click="mainStore.deleteUser(mainStore.userSelected)" severity="danger" />
+        <Button label="Eliminar usuario" icon="pi pi-trash" @click="handleDelete(mainStore.userSelected)" severity="danger" />
       </div>
     </div>
   </Dialog>
@@ -150,12 +150,22 @@ import Button from 'primevue/button'
 import Avatar from 'primevue/avatar'
 import Divider from 'primevue/divider'
 import { useMainStore } from '@/stores/mainStore'
+import { useToast } from 'primevue/usetoast'
 const mainStore = useMainStore()
+const toast = useToast()
 
 function formatDate(dateStr) {
   const d = new Date(dateStr)
   return d.toLocaleDateString()
 }
+
+
+const handleDelete = (user) => {
+  mainStore.deleteUser(user)
+  toast.add({ severity: 'info', summary: 'Usuario eliminado', detail: user.name.first, life: 3000 })
+}
+
+
 </script>
 
 <style scoped></style>

@@ -1,6 +1,7 @@
 <template>
+  <Toast />
   <router-view />
 </template>
 <script setup>
-document.documentElement.classList.add('light');
+import { Toast } from 'primevue';
 </script>

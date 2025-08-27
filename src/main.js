@@ -3,9 +3,9 @@ import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
 import './index.css'
 import ToastService from 'primevue/toastservice'
+import Toast from 'primevue/toast'
 import AnimateOnScroll from 'primevue/animateonscroll'
 import Aura from '@primeuix/themes/aura';
-
 import App from './App.vue'
 import router from './router'
 
@@ -19,6 +19,6 @@ app.use(PrimeVue, {
   },
 })
 app.use(ToastService)
-app.directive('animateonscroll', AnimateOnScroll)
+app.component('Toast', Toast)
 
 app.mount('#app')

@@ -4,6 +4,7 @@
     modal
     header="Nuevo Usuario"
     class="w-full md:w-3/4 lg:w-2/3 xl:w-1/2"
+    @hide="resetForm"
   >
     <form @submit.prevent="handleSubmit">
       <div class="mb-4">
@@ -259,16 +260,16 @@
       <!-- Botones -->
       <div class="flex justify-end gap-2">
         <Button
-          type="button"
+        type="button"
           label="Cancelar"
           severity="secondary"
           @click="mainStore.dialogNewUser = false"
-        />
-        <Button type="submit" label="Guardar" />
-      </div>
-    </form>
-  </Dialog>
-</template>
+          />
+          <Button type="submit" label="Guardar" />
+        </div>
+      </form>
+    </Dialog>
+  </template>
 
 <script setup>
 import Dialog from 'primevue/dialog'
@@ -279,8 +280,10 @@ import Select from 'primevue/select'
 import DatePicker from 'primevue/datepicker'
 import { ref } from 'vue'
 import { useMainStore } from '@/stores/mainStore'
+import { useToast } from "primevue/usetoast";
 
 const mainStore = useMainStore()
+const toast = useToast();
 
 const genderOptions = [
   { label: 'Masculino', value: 'male' },
@@ -412,5 +415,31 @@ function handleSubmit() {
   form.value.dob.age = calculateAge(form.value.dob.date)
   mainStore.createUser({ ...form.value })
   mainStore.dialogNewUser = false
+  toast.add({ severity: 'success', summary: 'Éxito', detail: 'Usuario creado correctamente', life: 3000 });
+}
+
+function resetForm(){
+  form.value = {
+    gender: '',
+    name: { title: '', first: '', last: '' },
+    email: '',
+    login: { username: '', password: '' },
+    location: {
+      street: { number: '', name: '' },
+      city: '',
+      state: '',
+      country: '',
+      postcode: '',
+      coordinates: { latitude: '', longitude: '' },
+      timezone: { offset: '', description: '' },
+    },
+    dob: { date: '', age: null },
+    registered: { date: '' },
+    phone: '',
+    cell: '',
+    id: { name: '', value: '' },
+    picture: { large: '', medium: '', thumbnail: '' },
+    nat: null,
+  }
 }
 </script>
