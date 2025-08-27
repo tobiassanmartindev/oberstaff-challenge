@@ -4,9 +4,9 @@
       <div class="grid grid-cols-12">
         <div class="col-span-12 md:col-span-6 xl:col-span-6 flex items-center">
           <div class="flex gap-2">
-            <span>Cargar Manualmente</span>
+            <span class="text-grey-900">Cargar Manualmente</span>
             <ToggleSwitch v-model="mainStore.infiniteScroll" />
-            <span>Scroll Infinito</span>
+            <span class="text-grey-900">Scroll Infinito</span>
           </div>
         </div>
         <div class="col-span-12 md:col-span-6 xl:col-span-6 items-center flex justify-end text-gray-600">
@@ -19,6 +19,7 @@
               @click="toggle"
               aria-haspopup="true"
               aria-controls="overlay_menu"
+              severity="green-500"
             />
             <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
               <template #item="{ item, props }">

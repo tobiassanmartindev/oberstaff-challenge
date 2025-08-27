@@ -2,7 +2,7 @@
   <div class="card flex justify-center">
     <InputText
       type="text"
-      class="w-full"
+      class="w-full search-bar"
       @update:model-value="mainStore.filterUsers($event)"
       v-model="mainStore.searchFilter"
       placeholder="Buscar por nombre o país"
@@ -18,3 +18,11 @@ import { useMainStore } from '@/stores/mainStore.js'
 const mainStore = useMainStore()
 const value = ref(null)
 </script>
+
+<style scoped>
+.search-bar{
+    color: #334155;
+    background: #fff;
+}
+
+</style>

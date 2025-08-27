@@ -5,7 +5,7 @@
       :options="filterOptions"
       optionLabel="name"
       placeholder="Nombre (A-Z)"
-      class="w-full md:w-56"
+      class="w-full md:w-56 sort-control"
       @change="mainStore.sortUsers($event.value)"
     />
   </div>
