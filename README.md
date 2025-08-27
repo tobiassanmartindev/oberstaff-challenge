@@ -1,41 +1,28 @@
-# user-finder-challenge
+# Oberstaff Challenge
 
-This template should help get you started developing with Vue 3 in Vite.
+Un buscador de usuarios con una UI limpia, simple y eficiente, desarrollado con **Vue 3** y **PrimeVue** y estilizado con **Tailwind CSS**.
 
-## Recommended IDE Setup
+##  Demo
+Visita la aplicación en vivo: [oberstaff-challenge.vercel.app](https://oberstaff-challenge.vercel.app)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+##  Características
+- Búsqueda rápida de usuarios
+- Interfaz moderna y responsiva
+- Configuración minimalista y enfocada en UX
 
-## Customize configuration
+##  Tecnologías usadas
+- Vue 3 + PrimeVue
+- Tailwind CSS
+- Vitest para pruebas unitarias
+- ESLint + Prettier para linting
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+##  Requisitos previos
+- Node.js (≥16)
+- npm o yarn
 
-## Project Setup
-
-```sh
+##  Cómo ejecutar en desarrollo
+```bash
+git clone <repo_url>
+cd oberstaff-challenge
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
