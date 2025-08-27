@@ -20,6 +20,7 @@
               aria-haspopup="true"
               aria-controls="overlay_menu"
               severity="success"
+              class="p-button"
             />
             <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
               <template #item="{ item, props }">
@@ -85,5 +86,8 @@ const toggle = (event) => {
 }
 .span-text {
   color: #334155;
+}
+.p-button {
+  color: #fff;
 }
 </style>

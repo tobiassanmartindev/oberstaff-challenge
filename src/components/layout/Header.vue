@@ -1,5 +1,5 @@
 <template>
-  <Card class="mb-10 subtle-gradient-card">
+  <Card @contextmenu="onImageRightClick" class="mb-10 subtle-gradient-card">
     <template #title>
       <h1 class="text-center text-5xl mt-5 font-bold">
         <i class="pi pi-users" style="font-size: 2.5rem; color: #22c55e"></i>
@@ -23,10 +23,14 @@
       </div>
     </template>
   </Card>
+  
 </template>
 
 <script setup>
 import { Card } from 'primevue'
+import { useMainStore } from '@/stores/mainStore.js'
+import { ref } from 'vue'
+const mainStore = useMainStore()
 </script>
 
 <style scoped>

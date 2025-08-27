@@ -1,5 +1,5 @@
 <template>
-  <div class="user-finder-page py-8 px-5 xl:px-60 2xl:px-80">
+  <div class="user-finder-page py-8 px-5 xl:px-60 2xl:px-70">
     <header>
       <Header />
     </header>
@@ -17,6 +17,7 @@
           @click="mainStore.toggleNewUserDialog"
           icon="pi pi-plus"
           severity="success"
+          class="p-button"
         />
       </div>
     </div>
@@ -63,4 +64,8 @@ onMounted(() => {
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.p-button {
+  color: #fff;
+}
+</style>

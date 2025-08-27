@@ -64,6 +64,14 @@ export const useMainStore = defineStore('main', {
       this.cacheData()
     },
 
+    deleteUser(user) {
+      this.users = this.users.filter((u) => u.login.uuid !== user.login.uuid)
+      this.filteredUsers = this.filteredUsers.filter((u) => u.login.uuid !== user.login.uuid)
+      this.userSelected = null
+      this.dialogViewUser = false
+      this.cacheData()
+    },
+
     filterUsers(filter) {
       this.searchFilter = filter
       const normalizedFilter = filter.toLowerCase()
@@ -192,6 +200,6 @@ export const useMainStore = defineStore('main', {
           this.fetchUsers()
         }
       }
-    },
+    },    
   },
 })

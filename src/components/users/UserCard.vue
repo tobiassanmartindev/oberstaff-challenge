@@ -54,13 +54,42 @@
 </template>
 
 <script setup>
+
 import Card from 'primevue/card'
 import Divider from 'primevue/divider'
 import Tag from 'primevue/tag'
+import ContextMenu from 'primevue/contextmenu'
+import { useMainStore } from '@/stores/mainStore.js'
+import { ref } from 'vue'
+
+const mainStore = useMainStore()
+const menu = ref(null);
+const optionsMenu = [
+  {
+    label: 'Eliminar Usuario',
+    icon: 'pi pi-trash',
+    class: 'text-red-600',
+    command: () => {
+      mainStore.deleteUser(user)
+    },
+  }
+]
+
+const onImageRightClick = (event) => {
+  event.preventDefault() 
+  if (menu.value) {
+    menu.value.show(event)
+  } else {
+    pendingEvent = event
+  }
+}
+
+
 defineProps({
   user: {
     type: Object,
     required: true,
   },
 })
+
 </script>

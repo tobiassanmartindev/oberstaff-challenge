@@ -10,7 +10,7 @@
       <div class="grid grid-cols-12">
         <div class="col-span-12 lg:col-span-10 xl:col-span-10">
           <div class="flex items-center gap-4 mb-2">
-            <Avatar :image="mainStore.userSelected.picture.large" shape="circle" size="xlarge" />
+            <Avatar :image="mainStore.userSelected?.picture.large" shape="circle" size="xlarge" />
             <div>
               <div class="text-xl font-semibold col-span-6">
                 {{ mainStore.userSelected.name.first }} {{ mainStore.userSelected.name.last }}
@@ -136,6 +136,9 @@
             <span>Nacionalidad: {{ mainStore.userSelected.nat }}</span>
           </div>
         </div>
+      </div>
+      <div class="text-right">
+        <Button label="Eliminar usuario" icon="pi pi-trash" @click="mainStore.deleteUser(mainStore.userSelected)" severity="danger" />
       </div>
     </div>
   </Dialog>
